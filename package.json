@@ -1,0 +1,23 @@
+{
+  "name": "completeproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agentolek/completeProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agentolek/completeProject/issues"
+  },
+  "homepage": "https://github.com/agentolek/completeProject#readme",
+  "dependencies": {
+    "image-downloader": "^4.0.2",
+    "reddit.images": "^1.1.2"
+  }
+}
