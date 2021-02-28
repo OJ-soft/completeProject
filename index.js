@@ -10,15 +10,11 @@ const array = new Array()
 const options = {
   url: ' ',
   //insert path of folder for downloaded images to go to
-  dest: ''
+  dest: '/Users/ANowak/Desktop/saved'
 }
 
 const rnd = async () => {
-  console.log(temp1)
-
-  AOIG:
-  while (temp2 < temp1) {
-
+  AOIG: while (temp2 < temp1) {
     const result = await redditimage.fetch({
       type: "custom",
       total: temp1.valueOf(),
@@ -45,9 +41,7 @@ const rnd = async () => {
         break AOIG
       }
       }
-      else{
-          console.log('not enough upvotes')
-      }
+
     }
 
   } 
