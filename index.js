@@ -2,29 +2,32 @@ const redditimage = require("reddit.images")
 const download = require('image-downloader')
 const { TIMEOUT } = require("dns")
 const { memeSubreddit } = require("reddit.images/config/config")
+const prompt = require('prompt-sync')();
 
-let temp1 = 10
 let temp2 = 0
 const array = new Array()
 
+let subredditPicked = prompt("What subreddit:")
+let amountPicked = parseInt(prompt("How many posts:"))
+let upvoteLimitPicked = parseInt(prompt("Minimum upvotes:"))
+
 const options = {
   url: ' ',
-  //insert path of folder for downloaded images to go to
-  dest: '/Users/ANowak/Desktop/saved'
+  //input your path here
+  dest: 'C:/Users/ANowak/Desktop/saved'
 }
 
 const rnd = async () => {
-  AOIG: while (temp2 < temp1) {
+  AOIG: while (temp2 < amountPicked) {
     const result = await redditimage.fetch({
       type: "custom",
-      total: temp1.valueOf(),
-      subreddit: ["polandball"],
+      total: amountPicked,
+      subreddit: [subredditPicked],
     })
     
-    for (let i = 0; i < temp1; i++) {
-      console.log(result[i].upvotes)
+    for (let i = 0; i < amountPicked; i++) {
 
-      if(result[i].upvotes > 500 && !array.includes(result[i].image)){
+      if(result[i].upvotes > upvoteLimitPicked && !array.includes(result[i].image)){
         options.url = result[i].image
   
       download.image(options)
@@ -37,7 +40,7 @@ const rnd = async () => {
 
       array.push(options.url)
       
-      if (temp2 === temp1) {
+      if (temp2 === amountPicked) {
         break AOIG
       }
       }

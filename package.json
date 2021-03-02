@@ -18,6 +18,7 @@
   "homepage": "https://github.com/agentolek/completeProject#readme",
   "dependencies": {
     "image-downloader": "^4.0.2",
+    "prompt-sync": "^4.2.0",
     "reddit.images": "^1.1.2"
   }
 }
