@@ -1,13 +1,14 @@
 const redditimage = require("reddit.images")
 const download = require('image-downloader')
 const prompt = require('prompt-sync')()
-const tables = require('./tables.js')
+const { memeSubreddit } = require("reddit.images/config/config");
+//const tables = require('./tables.js')
 
 let temp2 = 0
 const array = new Array()
 
 let subredditPicked = prompt("What subreddit:")
-if(subredditPicked == 'sSubreddits'){
+if(subredditPicked === 'sSubreddits'){
   subredditPicked = tables.sSubreddits
 }
 let amountPicked = parseInt(prompt("How many posts(max50):"))
@@ -25,7 +26,7 @@ const rnd = async () => {
     const result = await redditimage.fetch({
       type: "custom",
       total: amountPicked,
-      subreddit: subredditPicked,
+      subreddit: [subredditPicked],
     })
     
     for (let i = 0; i < amountPicked; i++) {
