@@ -1,6 +1,5 @@
 const redditimage = require("reddit.images")
 const download = require('image-downloader')
-const { TIMEOUT } = require("dns")
 const { memeSubreddit } = require("reddit.images/config/config")
 const prompt = require('prompt-sync')();
 
