@@ -2,7 +2,7 @@ const redditimage = require("reddit.images")
 const download = require('image-downloader')
 const prompt = require('prompt-sync')()
 const { memeSubreddit } = require("reddit.images/config/config");
-//const tables = require('./tables.js')
+const tables = require('./tables.js')
 
 let temp2 = 0
 const array = new Array()
@@ -13,7 +13,6 @@ if(subredditPicked === 'sSubreddits'){
 }
 let amountPicked = parseInt(prompt("How many posts(max50):"))
 let upvoteLimitPicked = parseInt(prompt("Minimum upvotes:"))
-
 
 const options = {
   url: ' ',
