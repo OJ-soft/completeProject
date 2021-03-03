@@ -7,7 +7,7 @@ let temp2 = 0
 const array = new Array()
 
 let subredditPicked = prompt("What subreddit:")
-let amountPicked = parseInt(prompt("How many posts:"))
+let amountPicked = parseInt(prompt("How many posts(max50):"))
 let upvoteLimitPicked = parseInt(prompt("Minimum upvotes:"))
 
 const options = {
