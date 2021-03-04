@@ -11,7 +11,7 @@ This program will search for and download posts from certain subreddits on reddi
 
 The program will then proceed to download posts according to your criteria. 
 
-Example:
+## Example:
 
 ```
 What subreddit:polandball
