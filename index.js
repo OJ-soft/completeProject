@@ -4,15 +4,15 @@ const prompt = require('prompt-sync')()
 const { memeSubreddit } = require("reddit.images/config/config");
 const tables = require('./tables.js')
 
-let temp2 = 0
+let counter = 0
 const array = new Array()
 
-let subredditPicked = prompt("What subreddit:")
+const subredditPicked = prompt("What subreddit:")
 if(subredditPicked === 'sSubreddits'){
   subredditPicked = tables.sSubreddits
 }
-let amountPicked = parseInt(prompt("How many posts(max50):"))
-let upvoteLimitPicked = parseInt(prompt("Minimum upvotes:"))
+const amountPicked = parseInt(prompt("How many posts(max50):"))
+const upvoteLimitPicked = parseInt(prompt("Minimum upvotes:"))
 
 const options = {
   url: ' ',
@@ -21,7 +21,7 @@ const options = {
 }
 
 const rnd = async () => {
-  AOIG: while (temp2 < amountPicked) {
+  AOIG: while (counter < amountPicked) {
     const result = await redditimage.fetch({
       type: "custom",
       total: amountPicked,
@@ -39,11 +39,11 @@ const rnd = async () => {
         })
         .catch((err) => console.error(err))
 
-      temp2++
+      counter++
 
       array.push(options.url)
       
-      if (temp2 === amountPicked) {
+      if (counter === amountPicked) {
         break AOIG
       }
       }
