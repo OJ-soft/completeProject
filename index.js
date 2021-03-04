@@ -13,11 +13,12 @@ if(subredditPicked === 'sSubreddits'){
 }
 const amountPicked = parseInt(prompt("How many posts(max50):"))
 const upvoteLimitPicked = parseInt(prompt("Minimum upvotes:"))
+const pathPicked = prompt("Path of folder:")
 
 const options = {
   url: ' ',
   //input your path here
-  dest: 'C:/Users/ANowak/Desktop/saved'
+  dest: pathPicked
 }
 
 const rnd = async () => {
